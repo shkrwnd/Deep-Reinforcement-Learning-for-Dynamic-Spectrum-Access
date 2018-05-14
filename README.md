@@ -1,8 +1,10 @@
 # Deep-Reinforcement-Learning-for-Dynamic-Spectrum-Access
 
 ## Dependencies
+
 1. tensorflow>1.0
 2. matplotlib
+3. python 3.x(windows)
 
 ### TO install tensorflow ,follow the link [tensorflow - windows](https://www.tensorflow.org/install/install_windows) 
 I recommend Installing with Anaconda 
