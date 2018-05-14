@@ -8,4 +8,13 @@
 I recommend Installing with Anaconda 
 
 
+To train the DQN ,run on terminal
+```bash
+cd Deep-Reinforcement-Learning-for-Dynamic-Spectrum-Access
+python train.py
+```
+
+
+
+
 
