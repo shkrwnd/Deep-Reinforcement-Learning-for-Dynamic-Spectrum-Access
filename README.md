@@ -14,10 +14,15 @@ cd Deep-Reinforcement-Learning-for-Dynamic-Spectrum-Access
 python train.py
 ```
 
-To understand the code , I habve provided jupyter notebooks:
+To understand the code , I have provided jupyter notebooks:
 1. How to use environment.ipynb
 2. How to generate states.ipynb
 
+To run notebook,run on terminal
+```bash
+jupyter notebook
+```
+Default browser will open , just open ipynb files and run them
 
 
 
