@@ -15,8 +15,8 @@ python train.py
 ```
 
 To understand the code , I habve provided jupyter notebooks:
-1. [How to use environment.ipynb](/How to use environment.ipynb)
-2. [How to generate states.ipynb](/How to generate states.ipynb)
+1. [How to use environment.ipynb](./How to use environment.ipynb)
+2. [How to generate states.ipynb](./How to generate states.ipynb)
 
 
 
