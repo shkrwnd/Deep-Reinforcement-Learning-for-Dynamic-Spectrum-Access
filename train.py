@@ -20,6 +20,9 @@ def one_hot(num,len):
     vec[num] = 1
     return vec
 
+
+
+#generates next-state from action and observation
 def state_generator(action,obs):
     input_vector = []
     if action is None:
@@ -46,7 +49,7 @@ noise = 0.1
 step_size=1+2+2                         #length of history sequence for each datapoint  in batch
 state_size = 2 *(NUM_CHANNELS + 1)      #length of input (2 * k + 2)   :k = NUM_CHANNELS
 action_size = NUM_CHANNELS+1            #length of output  (k+1)
-alpha=0                                 #co-operatative fairness constant
+alpha=0                                 #co-operative fairness constant
 beta = 1                                #Annealing constant for Monte - Carlo
 
 # reseting default tensorflow computational graph
@@ -223,8 +226,15 @@ sess.run(tf.global_variables_initializer())
 #list of total rewards
 total_rewards = []
 
+# cumulative reward
+cum_r = [0]
+
+# cumulative collision
+cum_collision = [0]
+
 ##########################################################################
 ####                      main simulation loop                    ########
+
 
 for time_step in range(TIME_SLOTS):
     
@@ -245,7 +255,7 @@ for time_step in range(TIME_SLOTS):
         
     # Exploitation
     else:
-        #initialing action vector
+        #initializing action vector
         action = np.zeros([NUM_USERS],dtype=np.int32)
 
         #converting input history into numpy array
@@ -302,6 +312,16 @@ for time_step in range(TIME_SLOTS):
     # calculating sum of rewards
     sum_r =  np.sum(reward)
 
+    #calculating cumulative reward
+    cum_r.append(cum_r[-1] + sum_r)
+
+    #If NUM_CHANNELS = 2 , total possible reward = 2 , therefore collision = (2 - sum_r) or (NUM_CHANNELS - sum_r) 
+    collision = NUM_CHANNELS - sum_r
+    
+    #calculating cumulative collision
+    cum_collision.append(cum_collision[-1] + collision)
+    
+   
     #############################
     #  for co-operative policy we will give reward-sum to each user who have contributed
     #  to play co-operatively and rest 0
@@ -313,6 +333,7 @@ for time_step in range(TIME_SLOTS):
 
     total_rewards.append(sum_r)
     print (reward)
+    
     
     # add new experiences into the memory buffer as (state, action , reward , next_state) for training
     memory.add((state,action,reward,next_state))
@@ -370,10 +391,28 @@ for time_step in range(TIME_SLOTS):
     #   Training block ends
     ########################################################################################
     
-    if  time_step %1000 == 999:
-        plt.plot(np.arange(1000),total_rewards,"r+")
+    if  time_step %5000 == 4999:
+        plt.figure(1)
+        plt.subplot(211)
+        #plt.plot(np.arange(1000),total_rewards,"r+")
+        #plt.xlabel('Time Slots')
+        #plt.ylabel('total rewards')
+        #plt.title('total rewards given per time_step')
+        #plt.show()
+        plt.plot(np.arange(5001),cum_collision,"r-")
+        plt.xlabel('Time Slot')
+        plt.ylabel('cumulative collision')
+        #plt.show()
+        plt.subplot(212)
+        plt.plot(np.arange(5001),cum_r,"r-")
+        plt.xlabel('Time Slot')
+        plt.ylabel('Cumulative reward of all users')
+        #plt.title('Cumulative reward of all users')
         plt.show()
+        
         total_rewards = []
+        cum_r = [0]
+        cum_collision = [0]
         saver.save(sess,'checkpoints/dqn_multi-user.ckpt')
         #print time_step,loss , sum(reward) , Qs
     
