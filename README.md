@@ -2,12 +2,12 @@
 
 ## Dependencies
 
-1. python [link] (https://www.python.org)
-2. matplotlib [link] (https://matplotlib.org/)
-3. tensorflow [link] (https://www.tensorflow.org/)
-4. numpy [link] (https://www.numpy.org/)
-5. jupyter [link] (http://jupyter.org/)
-We recommend to install with Anaconda (https://anaconda.org/anaconda/python) 
+1. python [link](https://www.python.org)
+2. matplotlib [link](https://matplotlib.org/)
+3. tensorflow [link](https://www.tensorflow.org/)
+4. numpy [link](https://www.numpy.org/)
+5. jupyter [link](http://jupyter.org/)
+We recommend to install with [Anaconda](https://anaconda.org/anaconda/python) 
 
 
 ### To train the DQN ,run on terminal
