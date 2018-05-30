@@ -6,7 +6,7 @@
 2. matplotlib
 3. python 3.x(windows)
 
-### TO install tensorflow ,follow the link [tensorflow - windows](https://www.tensorflow.org/install/install_windows) 
+### To install tensorflow ,follow the link [tensorflow - windows](https://www.tensorflow.org/install/install_windows) 
 I recommend Installing with Anaconda 
 
 
@@ -28,7 +28,9 @@ jupyter notebook
 Default browser will open, just open ipynb files and run them
 
 
-
+This work is an inspiration from the paper
+O. Naparstek and K. Cohen, “Deep multi-user reinforcement learning for dynamic spectrum access in multichannel wireless
+networks,” to appear in Proc. of the IEEE Global Communications Conference (GLOBECOM), Dec. 2017
 
 
 
