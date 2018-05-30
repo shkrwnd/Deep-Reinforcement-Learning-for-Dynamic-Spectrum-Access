@@ -29,8 +29,10 @@ Default browser will open, just open ipynb files and run them
 
 
 This work is an inspiration from the paper
+```
 O. Naparstek and K. Cohen, “Deep multi-user reinforcement learning for dynamic spectrum access in multichannel wireless
 networks,” to appear in Proc. of the IEEE Global Communications Conference (GLOBECOM), Dec. 2017
+```
 
 
 
