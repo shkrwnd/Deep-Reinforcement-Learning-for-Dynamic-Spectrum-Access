@@ -8,6 +8,7 @@
 3. tensorflow > 1.0 [link](https://www.tensorflow.org/)
 4. numpy [link](https://www.numpy.org/)
 5. jupyter [link](http://jupyter.org/)
+
 We recommend to install with [Anaconda](https://anaconda.org/anaconda/python) 
 
 
