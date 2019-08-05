@@ -2,12 +2,13 @@
 
 ## Dependencies
 
-1. tensorflow>1.0
-2. matplotlib
-3. python 3.x(windows)
 
-### To install tensorflow ,follow the link [tensorflow - windows](https://www.tensorflow.org/install/install_windows) 
-I recommend Installing with Anaconda 
+1. python [link](https://www.python.org)
+2. matplotlib [link](https://matplotlib.org/)
+3. tensorflow > 1.0 [link](https://www.tensorflow.org/)
+4. numpy [link](https://www.numpy.org/)
+5. jupyter [link](http://jupyter.org/)
+We recommend to install with [Anaconda](https://anaconda.org/anaconda/python) 
 
 
 ### To train the DQN ,run on terminal
@@ -20,12 +21,13 @@ python train.py
 To understand the code , I have provided jupyter notebooks:
 1. How to use environment.ipynb
 2. How to generate states.ipynb
+3. How_to_create_cluster.ipynb
 
 To run notebook,run on terminal
 ```bash
 jupyter notebook
 ```
-Default browser will open, just open ipynb files and run them
+Default browser will open ipynb files. Run each command one by one
 
 
 This work is an inspiration from the paper
