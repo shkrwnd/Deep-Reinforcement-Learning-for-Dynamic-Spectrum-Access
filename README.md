@@ -2,9 +2,10 @@
 
 ## Dependencies
 
+
 1. python [link](https://www.python.org)
 2. matplotlib [link](https://matplotlib.org/)
-3. tensorflow [link](https://www.tensorflow.org/)
+3. tensorflow > 1.0 [link](https://www.tensorflow.org/)
 4. numpy [link](https://www.numpy.org/)
 5. jupyter [link](http://jupyter.org/)
 We recommend to install with [Anaconda](https://anaconda.org/anaconda/python) 
@@ -29,7 +30,11 @@ jupyter notebook
 Default browser will open ipynb files. Run each command one by one
 
 
-
+This work is an inspiration from the paper
+```
+O. Naparstek and K. Cohen, “Deep multi-user reinforcement learning for dynamic spectrum access in multichannel wireless
+networks,” to appear in Proc. of the IEEE Global Communications Conference (GLOBECOM), Dec. 2017
+```
 
 
 
